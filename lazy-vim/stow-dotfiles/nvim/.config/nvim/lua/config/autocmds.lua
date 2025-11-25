@@ -1,0 +1,8 @@
+-- オートコマンドは VeryLazy イベントで自動的に読み込まれます
+-- 常に設定されるデフォルトのオートコマンド: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+--
+-- 追加のオートコマンドはここに記述してください
+-- `vim.api.nvim_create_autocmd` を使用
+--
+-- またはグループ名（デフォルトは `lazyvim_` で始まる）で既存のオートコマンドを削除
+-- 例: vim.api.nvim_del_augroup_by_name(「lazyvim_wrap_spell」)

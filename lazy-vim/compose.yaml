@@ -1,0 +1,20 @@
+services:
+  neovim:
+    # 同一ディレクトリにあるDockerfileを指定してビルドする
+    build: .
+    # 自動で終了しないようにする
+    tty: true
+    # neovimコンテナに5173のポートを開ける
+    ports:
+      - "5173:5173"
+    # ホストの./projectを/home/myuser/projectにバインドする
+    volumes:
+      - type: bind
+        source: ../develop
+        target: /home/myuser/project
+      - type: bind
+        source: ./storage
+        target: /home/myuser/storage
+      - type: bind
+        source: ./stow-dotfiles
+        target: /home/myuser/stow-dotfiles
