@@ -86,7 +86,7 @@ RUN mkdir -p ${HOME_DIR}/stow-dotfiles && chown ${DOCKER_USER}:${DOCKER_USER} ${
 
 # 外部に切り出したscriptを呼び出すために
 # compose.yamlの同一ディレクトリにあるfull-install.shを${HOME_DIR}にコピー
-COPY --chown=${DOCKER_USER}:${DOCKER_USER} full-install.sh ${HOME_DIR}/
+COPY --chown=${DOCKER_USER}:${DOCKER_USER} ./lazy-vim/full-install.sh ${HOME_DIR}/
 
 # storageディレクトリに実行権限を付与
 RUN chmod -R +x ${HOME_DIR}/full-install.sh

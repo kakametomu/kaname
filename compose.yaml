@@ -10,11 +10,11 @@ services:
     # ホストの./projectを/home/myuser/projectにバインドする
     volumes:
       - type: bind
-        source: ../develop
+        source: ./develop
         target: /home/myuser/project
       - type: bind
-        source: ./storage
+        source: ./lazy-vim/storage
         target: /home/myuser/storage
       - type: bind
-        source: ./stow-dotfiles
+        source: ./lazy-vim/stow-dotfiles
         target: /home/myuser/stow-dotfiles
