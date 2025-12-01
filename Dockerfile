@@ -31,6 +31,7 @@ RUN pacman -Syu --noconfirm && \
     yazi \
     chezmoi \
     stow \
+    tmux \
     noto-fonts-cjk \
     fcitx5-im fcitx5-mozc && \
     pacman -Scc --noconfirm
