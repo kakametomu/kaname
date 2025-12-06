@@ -9,22 +9,23 @@
 # スクリプト全体で使用するスクリプトを格納している場所を設定
 # -----------------------------------------------------------------------------------
 
-STORAGE="$HOME/storage/script/"
+SCRIPTE="$HOME/script/"
 
 
 # -----------------------------------------------------------------------------------
 # nvim-my-config.sh(nvimの設定ファイルを指定の場所にコピーするスクリプト)の実行
 # -----------------------------------------------------------------------------------
 
-# 実行を分かりやすくするためにメッセージを出す
-echo "nvimの設定ファイルを.config配下にコピーするスクリプトを実行します。"
+# # 実行を分かりやすくするためにメッセージを出す
+# echo "nvimの設定ファイルを.config配下にコピーするスクリプトを実行します。"
 
-# 変更しやすいようにスクリプトのパスを変数に格納する
-NEOVIM_CONFIG="$STORAGE/neovim-my-config.sh"
+# # 変更しやすいようにスクリプトのパスを変数に格納する
+# NEOVIM_CONFIG="$SCRIPTE/nvim/neovim-my-config.sh"
 
-# sourceでshスクリプトを実行する
-source "$NEOVIM_CONFIG"
+# # sourceでshスクリプトを実行する - Deployment
+# source "$NEOVIM_CONFIG"
 
+# sleep 3
 
 # -----------------------------------------------------------------------------------
 # npmのデフォルトディレクトリの変更
@@ -34,11 +35,12 @@ source "$NEOVIM_CONFIG"
 echo "npmのグローバルの場所を変更するスクリプトを実行します。"
 
 # 変更しやすいようにスクリプトのパスを変数に格納する
-NPM_GLOBAL="$STORAGE/npm-global-change.sh"
+NPM_GLOBAL="$SCRIPTE/npm-global-change.sh"
 
 # sourceでshスクリプトを実行する
 source "$NPM_GLOBAL"
 
+sleep 1
 
 # -----------------------------------------------------------------------------------
 # GNU stowでdotfilesを展開
@@ -48,7 +50,7 @@ source "$NPM_GLOBAL"
 echo "GUN Stowを利用してdotfilesを展開します。"
 
 # 変更しやすいようにスクリプトのパスを変数に格納する
-SCRIPT_FILES="$STORAGE/stow-install.sh"
+SCRIPT_FILES="$SCRIPTE/stow-install.sh"
 
 # sourceでshスクリプトを実行する
 source "$SCRIPT_FILES"

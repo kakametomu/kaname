@@ -13,8 +13,8 @@ services:
         source: ./develop
         target: /home/myuser/project
       - type: bind
-        source: ./lazy-vim/storage
-        target: /home/myuser/storage
+        source: ./script
+        target: /home/myuser/script
       - type: bind
-        source: ./lazy-vim/stow-dotfiles
+        source: ./stow-dotfiles
         target: /home/myuser/stow-dotfiles

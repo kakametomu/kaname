@@ -66,7 +66,7 @@ RUN echo "export GTK_IM_MODULE=fcitx" >> /etc/profile && \
 RUN echo "fcitx5 &" >> ${HOME_DIR}/.bashrc
 
 # ${DOCKER_USER}ディレクトリを${DOCKER_USER}の所有者で作成
-# 作成と権限変更の実行していてコピーはしていない
+# 作成と権限変更の実行していてファイルはコピーはしていない
 RUN mkdir -p ${HOME_DIR} && chown -R ${DOCKER_USER}:${DOCKER_USER} ${HOME_DIR}
 
 # ホストのnvimディレクトリとマウントするため.configディレクトリ作成し${DOCKER_USER}の所有者に変更
@@ -79,7 +79,7 @@ RUN mkdir -p ${HOME_DIR}/project && chown ${DOCKER_USER}:${DOCKER_USER} ${HOME_D
 
 # ホストからcpする用のstorageディレクトリを作成し、${DOCKER_USER}の所有者に変更
 # 実際の配置はcompose.yamlのbindで配置
-RUN mkdir -p ${HOME_DIR}/storage && chown ${DOCKER_USER}:${DOCKER_USER} ${HOME_DIR}/storage
+RUN mkdir -p ${HOME_DIR}/script && chown ${DOCKER_USER}:${DOCKER_USER} ${HOME_DIR}/script
 
 # ホストからcpする用のdotfilesディレクトリを作成し、${DOCKER_USER}の所有者に変更
 # 実際の配置はcompose.yamlのbindで配置
@@ -87,7 +87,7 @@ RUN mkdir -p ${HOME_DIR}/stow-dotfiles && chown ${DOCKER_USER}:${DOCKER_USER} ${
 
 # 外部に切り出したscriptを呼び出すために
 # compose.yamlの同一ディレクトリにあるfull-install.shを${HOME_DIR}にコピー
-COPY --chown=${DOCKER_USER}:${DOCKER_USER} ./lazy-vim/full-install.sh ${HOME_DIR}/
+COPY --chown=${DOCKER_USER}:${DOCKER_USER} ./full-install.sh ${HOME_DIR}/
 
 # storageディレクトリに実行権限を付与
 RUN chmod -R +x ${HOME_DIR}/full-install.sh

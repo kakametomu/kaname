@@ -24,4 +24,4 @@ echo 'set -gx PATH ~/.npm-global/bin $PATH' >> ~/.config/fish/config.fish
 # source ~/.bashrc
 # source ~/.zshrc
 # source ~/.config/fish/config.fish
-echo "シェルの設定ファイルを適用してください。"
+echo "設定を有効化するにはシェルを再起動してください。"
